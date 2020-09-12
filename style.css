@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--clr-light: #b6defa;
+}
+
+.logo {
+	height: 10vh;
+	background-color: var(--clr-light);
+}
+
+.panels {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.panel {
+	height: 90vh;
+	background-color: red;
+}
