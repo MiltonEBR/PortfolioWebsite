@@ -19,16 +19,6 @@ p {
 	color: var(--clr-txt);
 }
 
-.panel-title {
-	margin-top: 30vh;
-	text-align: center;
-}
-
-.panel-desc {
-	padding-left: 2em;
-	padding-right: 2em;
-}
-
 .hidden {
 	display: none;
 }
@@ -38,26 +28,58 @@ p {
 	background-color: var(--clr-light);
 }
 
-#skills {
+.panel-title {
+	text-align: center;
+}
+
+.panel-desc {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+/* #skills:before {
+	content: "";
+	position: fixed;
+	width: calc(100%/3);
+	height: 90vh;
+	z-index: -1;
 	background-image: url("./images/pexels-david-dibert-1299391.jpg");
-}
+	background-size: cover;
+	background-position: center;
+	filter: blur(5px);
+} */
 
-#about {
+/* #about {
 	background-image: url("./images/pexels-pixabay-262438.jpg");
-}
+} */
 
-#projects {
+/* #projects {
 	background-image: url("./images/pexels-pixabay-270348.jpg");
-}
+} */
 
 .panel-container {
 	max-width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	overflow: hidden;
+}
+
+.panel-img {
+	position: fixed;
+	height: 90vh;
+	z-index: -1;
+	background-size: cover;
+	background-position: center;
+	filter: blur(5px);
 }
 
 .panel-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+
 	/*Bg properties*/
 	background-size: cover;
 	background-position: center;
