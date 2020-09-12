@@ -6,6 +6,31 @@
 
 :root {
 	--clr-light: #b6defa;
+	--bg-clr: rgba(0, 0, 0, 0.5);
+	--clr-txt: rgba(255, 255, 255, 1);
+}
+
+img {
+	max-width: 100%;
+}
+
+h2,
+p {
+	color: var(--clr-txt);
+}
+
+.panel-title {
+	margin-top: 30vh;
+	text-align: center;
+}
+
+.panel-desc {
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+.hidden {
+	display: none;
 }
 
 .logo {
@@ -13,12 +38,35 @@
 	background-color: var(--clr-light);
 }
 
-.panels {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+#skills {
+	background-image: url("./images/pexels-david-dibert-1299391.jpg");
 }
 
-.panel {
+#about {
+	background-image: url("./images/pexels-pixabay-262438.jpg");
+}
+
+#projects {
+	background-image: url("./images/pexels-pixabay-270348.jpg");
+}
+
+.panel-container {
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.panel-item {
+	/*Bg properties*/
+	background-size: cover;
+	background-position: center;
+	background-color: var(--bg-clr);
+	background-blend-mode: multiply;
+
+	/*Alignment properties*/
+	width: calc(100%/3);
 	height: 90vh;
-	background-color: red;
+	flex-shrink: min-content;
+	flex-grow: 1;
 }
