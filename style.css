@@ -6,17 +6,22 @@
 
 :root {
 	--clr-light: #b6defa;
-	--bg-clr: rgba(0, 0, 0, 0.5);
+	--bg-clr: rgba(0, 0, 0, 0.6);
 	--clr-txt: rgba(255, 255, 255, 1);
 }
 
 h2,
 p {
+	font-family: sans-serif;
 	color: var(--clr-txt);
+	z-index: 0;
+	display: block;
+	transition: transform 300ms;
 }
 
-.hidden {
-	display: none;
+p {
+	opacity: 0;
+	transition: opacity 250ms;
 }
 
 .logo {
@@ -25,12 +30,12 @@ p {
 }
 
 .panel-title {
-	grid-area: title;
+	grid-area: txt;
 	text-align: center;
 }
 
 .panel-desc {
-	grid-area: desc;
+	grid-area: txt;
 	padding-left: 2em;
 	padding-right: 2em;
 }
@@ -42,18 +47,25 @@ p {
 	align-items: center;
 }
 .panel-item {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: min-content;
+
 	display: grid;
 	background-color: var(--bg-clr);
-	background-blend-mode: multiply;
 
 	/*Alignment properties*/
 	width: calc(100%/3);
 	height: 90vh;
-	grid-template-areas: "title" "desc" "img";
+	grid-template-areas: "txt" "img";
 	grid-template-columns: 100%;
-
+	grid-template-rows: 100%;
 	justify-items: center;
+	align-items: center;
+
 	overflow: hidden;
+
+	transition: flex-grow 250ms;
 }
 
 .panel-img {
@@ -61,6 +73,27 @@ p {
 	grid-area: img;
 	grid-row: 1/3;
 	z-index: -1;
+	top: -5%;
 	height: 110%;
 	filter: blur(5px);
+	transition: filter 250ms;
+}
+
+.panel-item:hover {
+	flex-grow: 1.5;
+}
+
+.panel-item:hover p {
+	opacity: 1;
+	align-self: center;
+	display: block;
+}
+
+.panel-item:hover h2 {
+	align-self: center;
+	transform: translateY(-200%);
+}
+
+.panel-item:hover img {
+	filter: blur(15px);
 }
