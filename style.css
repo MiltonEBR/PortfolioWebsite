@@ -10,42 +10,32 @@
 	--clr-txt: rgba(255, 255, 255, 1);
 }
 
+/*Fonts*/
 h2,
 p {
 	font-family: sans-serif;
 	color: var(--clr-txt);
-	z-index: 0;
-	display: block;
-	padding: 0;
 }
 
-h2 {
-	margin-top: 10%;
-	transition: margin 250ms;
-	align-self: end;
-}
-
-p {
-	margin-top: 0;
-	align-self: start;
-	opacity: 1;
-	transition: opacity 250ms;
-}
-
+/*Design*/
 .logo {
-	height: 10vh;
 	background-color: var(--clr-light);
 }
 
-.panel-title {
-	grid-area: txt;
+.panel-item {
+	background-color: var(--bg-clr);
 }
 
-.panel-desc {
-	grid-area: desc;
-	width: 20vw;
-	padding-left: 2em;
-	padding-right: 2em;
+/*Initial Setups*/
+
+.logo {
+	height: 10vh;
+}
+
+.logo > img {
+	margin-top: 2.5vh;
+	margin-left: 1vh;
+	height: max-content;
 }
 
 .panel-container {
@@ -54,19 +44,21 @@ p {
 	justify-content: space-between;
 	align-items: center;
 }
+
 .panel-item {
+	/*Flex properties*/
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: min-content;
 
+	/*Grid for childs*/
 	display: grid;
-	background-color: var(--bg-clr);
-
-	/*Alignment properties*/
 	width: 100%;
 	height: 90vh;
+
 	grid-template-areas: "txt" "desc" "img";
 	grid-template-columns: 100%;
+
 	justify-items: center;
 	align-items: center;
 
@@ -78,30 +70,57 @@ p {
 	transition: flex-grow 3s;
 }
 
+.panel-title,
+.panel-desc {
+	display: block;
+}
+
+.panel-title {
+	grid-area: txt;
+	align-self: end;
+
+	margin-top: 10%;
+
+	transition: margin 250ms;
+}
+
+.panel-desc {
+	grid-area: desc;
+	align-self: start;
+
+	width: 20vw;
+	opacity: 0;
+
+	transition: opacity 250ms;
+}
+
 .panel-img {
-	min-width: 105%;
 	grid-area: img;
 	grid-row: 1/3;
-	z-index: -1;
-	top: -5%;
+
+	min-width: 105%;
 	height: 110%;
+	top: -5%;
+	z-index: -1;
+
 	filter: blur(5px);
 	transition: filter 250ms;
 }
+
+/*Animations*/
 
 .panel-item:hover {
 	flex-grow: 1.25;
 }
 
-.panel-item:hover p {
+.panel-item:hover .panel-desc {
 	opacity: 1;
 }
 
-.panel-item:hover h2 {
-	align-self: end;
+.panel-item:hover .panel-title {
 	margin-top: -25%;
 }
 
-.panel-item:hover img {
+.panel-item:hover .panel-img {
 	filter: blur(15px);
 }
