@@ -22,6 +22,8 @@
 	font-family: var(--fnt-ttl);
 	font-weight: var(--ttl-wgt);
 	font-size: 4em;
+
+	text-shadow: 0 5px 6px rgba(0, 0, 0, 0.7);
 }
 
 .panel-desc {
@@ -41,7 +43,7 @@
 
 /*Design*/
 .logo {
-	background-color: var(--clr-light);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 50%);
 }
 
 .panel-item {
@@ -52,14 +54,13 @@
 
 .logo {
 	position: absolute;
-	height: 10vh;
+	height: 12.5vh;
 	width: 100%;
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(1, 11, 32, 1) 50%);
 }
 
 .logo > img {
 	margin-top: 2.5vh;
-	margin-left: 1vh;
+	margin-left: 2.5vh;
 	width: 10%;
 }
 
@@ -156,7 +157,7 @@
 }
 
 .panel-item:hover .panel-click {
-	opacity: 0.6;
+	opacity: 0.7;
 }
 
 .panel-item:hover .panel-img {
