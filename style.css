@@ -54,26 +54,23 @@
 }
 
 /*Design*/
-.logo {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 50%);
-}
 
 .panel-item {
-	background-color: var(--bg-clr);
+	background: linear-gradient(90deg, rgba(20, 20, 20, 1) 20%, var(--bg-clr) 100%);
 }
 
 /*Setups*/
 
 .logo {
 	position: absolute;
-	height: 12.5vh;
+	height: 12vh;
 	width: 100%;
 }
 
 .logo > img {
-	margin-top: 2.5vh;
-	margin-left: 2.5vh;
-	width: 20%;
+	margin-top: 1.5vh;
+	margin-left: 1.5vh;
+	width: 15%;
 }
 
 .panel-container {
@@ -81,20 +78,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
+	flex-direction: column;
 }
 
 .panel-item {
-	flex-grow: 1;
-	flex-shrink: 1;
-	flex-basis: max-content;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 25vh;
 
 	display: grid;
 	width: 100%;
-	height: 20vh;
 
-	grid-template-areas: "txt desc" "click img";
-	grid-template-columns: 60% auto;
+	grid-template-areas: "txt desc" "img click";
+	grid-template-columns: 40% auto;
 	grid-template-rows: 90% auto;
 
 	justify-items: center;
@@ -118,7 +114,7 @@
 .panel-desc {
 	grid-area: desc;
 
-	width: 80%;
+	width: 90%;
 	align-self: center;
 }
 
@@ -138,24 +134,37 @@
 .panel-click {
 	grid-area: click;
 	align-self: start;
-	margin-top: -3%;
+	margin-top: -7%;
 	padding: 0;
-	grid-column: 1/3;
+	opacity: 0.7;
 }
 
 @media (min-width: 800px) {
+	.logo {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(20, 20, 20, 1) 50%);
+	}
+
 	.logo > img {
-		width: 10%;
+		margin-top: 2.5vh;
+		margin-left: 2.5vh;
+		width: 15%;
+		max-width: 150px;
 	}
 
 	.panel-container {
-		flex-wrap: nowrap;
+		flex-direction: row;
 		justify-content: space-between;
 	}
 
 	.panel-item {
+		background: none;
+
+		background-color: var(--bg-clr);
 		/*Flex properties*/
 		flex-basis: min-content;
+
+		flex-grow: 1;
+		flex-shrink: 1;
 
 		/*Grid for childs*/
 		display: grid;
