@@ -10,10 +10,6 @@
 	--clr-txt: rgba(255, 255, 255, 1);
 }
 
-img {
-	max-width: 100%;
-}
-
 h2,
 p {
 	color: var(--clr-txt);
@@ -29,63 +25,42 @@ p {
 }
 
 .panel-title {
+	grid-area: title;
 	text-align: center;
 }
 
 .panel-desc {
+	grid-area: desc;
 	padding-left: 2em;
 	padding-right: 2em;
 }
 
-/* #skills:before {
-	content: "";
-	position: fixed;
-	width: calc(100%/3);
-	height: 90vh;
-	z-index: -1;
-	background-image: url("./images/pexels-david-dibert-1299391.jpg");
-	background-size: cover;
-	background-position: center;
-	filter: blur(5px);
-} */
-
-/* #about {
-	background-image: url("./images/pexels-pixabay-262438.jpg");
-} */
-
-/* #projects {
-	background-image: url("./images/pexels-pixabay-270348.jpg");
-} */
-
 .panel-container {
-	max-width: 100%;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-
-.panel-img {
-	position: fixed;
-	height: 90vh;
-	z-index: -1;
-	filter: blur(5px);
-}
-
 .panel-item {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-
-	/*Bg properties*/
-	background-size: cover;
-	background-position: center;
+	display: grid;
 	background-color: var(--bg-clr);
 	background-blend-mode: multiply;
 
 	/*Alignment properties*/
 	width: calc(100%/3);
 	height: 90vh;
-	flex-shrink: min-content;
-	flex-grow: 1;
+	grid-template-areas: "title" "desc" "img";
+	grid-template-columns: 100%;
+
+	justify-items: center;
+	overflow: hidden;
+}
+
+.panel-img {
+	min-width: 105%;
+	grid-area: img;
+	grid-row: 1/3;
+	z-index: -1;
+	height: 110%;
+	filter: blur(5px);
 }
