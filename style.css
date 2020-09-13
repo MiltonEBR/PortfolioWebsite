@@ -16,11 +16,19 @@ p {
 	color: var(--clr-txt);
 	z-index: 0;
 	display: block;
-	transition: transform 300ms;
+	padding: 0;
+}
+
+h2 {
+	margin-top: 10%;
+	transition: margin 250ms;
+	align-self: end;
 }
 
 p {
-	opacity: 0;
+	margin-top: 0;
+	align-self: start;
+	opacity: 1;
 	transition: opacity 250ms;
 }
 
@@ -31,11 +39,11 @@ p {
 
 .panel-title {
 	grid-area: txt;
-	text-align: center;
 }
 
 .panel-desc {
-	grid-area: txt;
+	grid-area: desc;
+	width: 20vw;
 	padding-left: 2em;
 	padding-right: 2em;
 }
@@ -55,17 +63,19 @@ p {
 	background-color: var(--bg-clr);
 
 	/*Alignment properties*/
-	width: calc(100%/3);
+	width: 100%;
 	height: 90vh;
-	grid-template-areas: "txt" "img";
+	grid-template-areas: "txt" "desc" "img";
 	grid-template-columns: 100%;
-	grid-template-rows: 100%;
 	justify-items: center;
 	align-items: center;
 
+	column-gap: 0;
+	row-gap: 0;
+
 	overflow: hidden;
 
-	transition: flex-grow 250ms;
+	transition: flex-grow 3s;
 }
 
 .panel-img {
@@ -80,18 +90,16 @@ p {
 }
 
 .panel-item:hover {
-	flex-grow: 1.5;
+	flex-grow: 1.25;
 }
 
 .panel-item:hover p {
 	opacity: 1;
-	align-self: center;
-	display: block;
 }
 
 .panel-item:hover h2 {
-	align-self: center;
-	transform: translateY(-200%);
+	align-self: end;
+	margin-top: -25%;
 }
 
 .panel-item:hover img {
