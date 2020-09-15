@@ -2,12 +2,17 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 :root {
 	--clr-light: #b6defa;
 	--bg-clr: rgba(0, 0, 0, 0.6);
+	--bg-drk: rgba(0, 0, 0, 0.75);
+
 	--clr-txt: rgba(255, 255, 255, 1);
+	--bg-txt: rgba(255, 255, 255, 0.3);
 
 	--fnt-txt: 'Roboto', sans-serif;
 	--txt-wgt: 400;
