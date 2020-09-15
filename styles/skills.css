@@ -64,16 +64,22 @@ header > h1 {
 	position: relative;
 	height: 100%;
 	border: 0;
+	border-radius: 100%;
 	background: none;
+
+	transition: background-color 200ms, height 200ms;
 }
 
 #icon-holder > button > img {
+	position: relative;
+	z-index: -1;
 	border-radius: 100%;
 	display: block;
-	height: 95%;
+	height: 100%;
 }
 
 #icon-holder > button > h2 {
+	opacity: 0;
 	font-family: var(--fnt-txt);
 	font-weight: var(--ttl-wgt);
 	color: var(--clr-txt);
@@ -81,7 +87,22 @@ header > h1 {
 
 	position: absolute;
 	text-align: center;
-	top: 50%;
+	top: 60%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+	transition: opacity 200ms, top 200ms;
+}
+
+#icon-holder > button:hover {
+	background-color: var(--bg-clr);
+}
+
+#icon-holder > button:hover .icon-txt {
+	opacity: 1;
+	top: 50%;
+}
+
+#icon-holder > button:hover {
+	height: 115%;
 }
