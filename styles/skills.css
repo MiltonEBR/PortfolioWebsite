@@ -44,3 +44,44 @@ header > h1 {
 	width: 90%;
 	color: var(--clr-txt);
 }
+
+#icons {
+	height: 50vh;
+}
+
+#icon-holder {
+	position: relative;
+	margin-top: 12.5vh;
+	height: 50%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
+#icon-holder > button {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	border: 0;
+	background: none;
+}
+
+#icon-holder > button > img {
+	border-radius: 100%;
+	display: block;
+	height: 95%;
+}
+
+#icon-holder > button > h2 {
+	font-family: var(--fnt-txt);
+	font-weight: var(--ttl-wgt);
+	color: var(--clr-txt);
+	font-size: 3em;
+
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
