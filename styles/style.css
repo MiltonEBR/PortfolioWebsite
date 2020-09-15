@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--clr-light: #b6defa;
+	--bg-clr: rgba(0, 0, 0, 0.6);
+	--clr-txt: rgba(255, 255, 255, 1);
+
+	--fnt-txt: 'Roboto', sans-serif;
+	--txt-wgt: 400;
+
+	--fnt-ttl: 'Heebo', sans-serif;
+	--ttl-wgt: 900;
+}
