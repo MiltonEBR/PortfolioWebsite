@@ -106,3 +106,31 @@ header > h1 {
 #icon-holder > button:hover {
 	height: 115%;
 }
+
+footer {
+	height: 30vh;
+	background-color: var(--bg-clr);
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 50% 50%;
+	justify-items: center;
+	align-items: center;
+}
+
+footer > img {
+	width: 10%;
+}
+
+#social-holder > ul {
+	list-style: none;
+	display: flex;
+	justify-items: center;
+}
+
+#social-holder > ul > li {
+	margin: 0 .6em;
+}
+
+#social-holder > ul > li > a {
+	padding: 0.5em;
+}
