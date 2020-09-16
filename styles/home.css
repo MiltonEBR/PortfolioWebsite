@@ -151,3 +151,32 @@
 .panel-item:hover .panel-img {
 	filter: blur(15px);
 }
+
+@media (max-width: 800px) {
+	.panel-container {
+		flex-direction: column;
+	}
+
+	.panel-item {
+		/*Grid for childs*/
+		height: 25vh;
+		justify-items: center;
+		align-items: center;
+
+		grid-template-areas: "txt desc click img";
+		grid-template-columns: 100%;
+		grid-template-rows: 50% auto auto;
+	}
+
+	.panel-img {
+		grid-area: img;
+		grid-column: 1/5;
+		grid-row: 1/2;
+
+		margin-top: -5%;
+		min-width: 105%;
+		width: 105%;
+		height: auto;
+		z-index: -1;
+	}
+}
