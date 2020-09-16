@@ -3,7 +3,7 @@
 	color: var(--clr-txt);
 	font-family: var(--fnt-ttl);
 	font-weight: var(--ttl-wgt);
-	font-size: 2em;
+	font-size: 4em;
 	text-align: center;
 	text-shadow: 0 5px 6px rgba(0, 0, 0, 0.7);
 }
@@ -12,27 +12,15 @@
 	color: var(--clr-txt);
 	font-family: var(--fnt-txt);
 	font-weight: var(--txt-wgt);
-	font-size: 1em;
+	font-size: 1.5em;
 }
 
 .panel-click {
 	font-family: var(--fnt-txt);
 	color: var(--clr-txt);
-	font-size: 1.25em;
+	font-size: 1.5em;
 
 	text-decoration: underline;
-}
-
-@media (min-width: 1200px) {
-	.panel-title {
-		font-size: 4em;
-	}
-	.panel-desc {
-		font-size: 1.5em;
-	}
-	.panel-click {
-		font-size: 1.5em;
-	}
 }
 
 /*Design*/
