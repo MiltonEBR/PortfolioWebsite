@@ -155,28 +155,27 @@
 @media (max-width: 800px) {
 	.panel-container {
 		flex-direction: column;
+		height: 100vh;
 	}
 
 	.panel-item {
-		/*Grid for childs*/
-		height: 25vh;
-		justify-items: center;
-		align-items: center;
-
 		grid-template-areas: "txt desc click img";
-		grid-template-columns: 100%;
-		grid-template-rows: 50% auto auto;
+		grid-template-columns: 50% auto auto;
+		grid-template-rows: 100%;
 	}
 
 	.panel-img {
-		grid-area: img;
 		grid-column: 1/5;
 		grid-row: 1/2;
+		margin-top: 0;
+		height: 100vh;
+	}
 
-		margin-top: -5%;
-		min-width: 105%;
-		width: 105%;
-		height: auto;
-		z-index: -1;
+	.panel-click {
+		display: none;
+	}
+
+	.panel-title {
+		display: none;
 	}
 }
