@@ -70,13 +70,14 @@ header > h1 {
 }
 
 #icons {
-	height: 50vh;
+	margin-top: 12.5vh;
+	height: 25vh;
+	margin-bottom: 12.5vh;
 }
 
 #icon-holder {
 	position: relative;
-	margin-top: 12.5vh;
-	height: 50%;
+	height: 100%;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -87,21 +88,20 @@ header > h1 {
 .icon-btn {
 	display: inline-block;
 	position: relative;
-	height: 100%;
 	border: 0;
 	border-radius: 100%;
 	background: none;
+	width: 15%;
 
-	transition: background-color 200ms, height 200ms;
+	transition: background-color 200ms, width 200ms;
 }
 
 .icon-btn > img {
-	max-width: 100%;
+	width: 100%;
 	position: relative;
 	z-index: -1;
 	border-radius: 100%;
 	display: block;
-	height: 100%;
 }
 
 .icon-btn > h2 {
@@ -122,7 +122,7 @@ header > h1 {
 
 .icon-btn:hover {
 	background-color: var(--bg-clr);
-	height: 115%;
+	width: 20%;
 }
 
 .icon-btn:hover .icon-txt {
