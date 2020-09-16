@@ -2,7 +2,7 @@ body {
 	background-color: var(--bg-drk);
 }
 
-nav > button {
+#home-btn {
 	position: fixed;
 	margin: 1vw;
 	width: 8vw;
@@ -11,13 +11,13 @@ nav > button {
 	border-radius: 50px;
 }
 
-nav > button > img {
+#home-btn > img {
 	display: inline-block;
 	padding-left: 1em;
 	padding-right: 1em;
 }
 
-nav > button > h2 {
+#home-btn > h2 {
 	height: 100%;
 	height: 100%;
 	display: inline-block;
@@ -29,6 +29,8 @@ nav > button > h2 {
 }
 
 header > h1 {
+	overflow: hidden;
+
 	font-family: var(--fnt-ttl);
 	font-weight: var(--ttl-wgt);
 	color: var(--bg-txt);
@@ -79,9 +81,10 @@ header > h1 {
 	justify-content: space-evenly;
 	align-items: center;
 	width: 100%;
+	max-width: 100%;
 }
 
-#icon-holder > button {
+.icon-btn {
 	display: inline-block;
 	position: relative;
 	height: 100%;
@@ -92,7 +95,8 @@ header > h1 {
 	transition: background-color 200ms, height 200ms;
 }
 
-#icon-holder > button > img {
+.icon-btn > img {
+	max-width: 100%;
 	position: relative;
 	z-index: -1;
 	border-radius: 100%;
@@ -100,7 +104,7 @@ header > h1 {
 	height: 100%;
 }
 
-#icon-holder > button > h2 {
+.icon-btn > h2 {
 	opacity: 0;
 	font-family: var(--fnt-txt);
 	font-weight: var(--ttl-wgt);
@@ -116,17 +120,14 @@ header > h1 {
 	transition: opacity 200ms, top 200ms;
 }
 
-#icon-holder > button:hover {
+.icon-btn:hover {
 	background-color: var(--bg-clr);
+	height: 115%;
 }
 
-#icon-holder > button:hover .icon-txt {
+.icon-btn:hover .icon-txt {
 	opacity: 1;
 	top: 50%;
-}
-
-#icon-holder > button:hover {
-	height: 115%;
 }
 
 footer {
@@ -142,18 +143,18 @@ footer {
 footer > img {
 	margin-top: 3vh;
 	width: 10%;
+	min-width: 150px;
 }
 
-#social-holder > ul {
+#social-list {
 	list-style: none;
 	display: flex;
 	justify-items: center;
 }
-
-#social-holder > ul > li {
+#social-list > li {
 	margin: 0 .6em;
 }
 
-#social-holder > ul > li > a {
+.social-link {
 	padding: 0.5em;
 }
