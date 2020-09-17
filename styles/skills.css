@@ -5,23 +5,32 @@ body {
 #home-btn {
 	position: fixed;
 	margin: 1vw;
-	width: 8vw;
-	height: 4vh;
+	width: 150px;
+	height: 40px;
 	border: none;
 	border-radius: 50px;
+
+	display: grid;
+	grid-template-columns: 25% auto;
+	align-items: center;
 }
 
-#home-btn > img {
-	display: inline-block;
-	padding-left: 1em;
-	padding-right: 1em;
+#home-btn > i {
+	justify-self: end;
+	padding: 5px 6px;
+	border-radius: 100%;
+	color: var(--clr-txt);
+	background-color: var(--bg-clr);
+	height: 30px;
+	width: 30px;
+	font-size: 1.25em;
 }
 
 #home-btn > h2 {
+	margin-left: 15px;
+	justify-self: start;
 	height: 100%;
 	height: 100%;
-	display: inline-block;
-	margin-left: 5%;
 	font-family: var(--fnt-txt);
 	font-weight: var(--txt-wgt);
 	color: var(--bg-drk);
