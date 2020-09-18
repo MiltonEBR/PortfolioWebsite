@@ -1,14 +1,35 @@
+const delay = (n) => {
+	n = n || 2000;
+	return new Promise((acc) => {
+		setTimeout(() => {
+			acc();
+		}, n);
+	});
+};
+
+const transition = () => {
+	const div = document.querySelector('.trans');
+	div.classList.toggle('trans-on');
+};
+
 barba.init({
 	transitions: [
 		{
 			name: 'default-transition',
-			leave() {
-				const div = document.querySelector('.trans');
-				div.classList.add('trans-on');
+			async leave(data) {
+				const done = this.async();
+
+				transition();
+				await delay(250);
+				done();
 			},
-			enter() {
-				const div = document.querySelector('.trans');
-				div.classList.remove('trans-on');
+			async enter(data) {
+				const done = this.async();
+
+				transition();
+				await delay(1250);
+
+				done();
 			}
 		}
 	]
