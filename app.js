@@ -1,10 +1,21 @@
-barba.init();
+barba.init({
+	transitions: [
+		{
+			name: 'default-transition',
+			leave() {
+				const div = document.querySelector('.trans');
+				div.classList.add('trans-on');
+			},
+			enter() {
+				const div = document.querySelector('.trans');
+				div.classList.remove('trans-on');
+			}
+		}
+	]
+});
 
-// const addTransDiv = () => {
-// 	var div = document.createElement('div');
-// 	div.classList.add('trans');
-// 	return document.body.appendChild(div);
-// };
+const div = document.querySelector('.trans');
+
 // const links = document.querySelectorAll('.panel-item');
 
 // const transitionDIV = addTransDiv();
