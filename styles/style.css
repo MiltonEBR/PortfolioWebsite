@@ -29,18 +29,14 @@
 	right: 0;
 	left: 0;
 	z-index: 100;
-	transform: translateX(-100%);
 
-	transition: transform 250ms;
+	transition: transform 500ms;
 }
 
 .trans-on {
-	position: fixed;
-	background-color: black;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 100;
 	transform: translateX(0%);
+}
+
+.trans-off {
+	transform: translateX(-100%);
 }

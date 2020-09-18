@@ -9,7 +9,13 @@ const delay = (n) => {
 
 const transition = () => {
 	const div = document.querySelector('.trans');
-	div.classList.toggle('trans-on');
+	if (div.classList.contains('trans-off')) {
+		div.classList.remove('trans-off');
+		div.classList.add('trans-on');
+	} else {
+		div.classList.remove('trans-on');
+		div.classList.add('trans-off');
+	}
 };
 
 barba.init({
@@ -20,16 +26,11 @@ barba.init({
 				const done = this.async();
 
 				transition();
-				await delay(250);
+				await delay(600);
 				done();
 			},
 			async enter(data) {
-				const done = this.async();
-
 				transition();
-				await delay(1250);
-
-				done();
 			}
 		}
 	]
