@@ -45,10 +45,17 @@ const closeCards = () => {
 	}
 };
 
-const openCard = (btn) => {
-	if (!btn.classList.contains('clicked')) {
-		btn.classList.add('clicked');
-		btn.onclick = null;
+const openCard = function(evt) {
+	var close = false;
+	for (icon of icons) {
+		if (evt.target === icon) {
+			close = true;
+			break;
+		}
+	}
+	if (!this.classList.contains('clicked') && !close) {
+		closeCards();
+		this.classList.add('clicked');
 	}
 };
 
@@ -67,17 +74,7 @@ document.addEventListener('click', (evt) => {
 
 if (buttons.length > 0) {
 	for (button of buttons) {
-		button.addEventListener('transitionend', function() {
-			console.log('hello');
-			if (!this.classList.contains('clicked')) {
-				this.onclick = function() {
-					if (!this.classList.contains('clicked')) {
-						this.classList.add('clicked');
-						this.onclick = null;
-					}
-				};
-			}
-		});
+		button.onclick = openCard;
 	}
 
 	for (icon of icons) {
