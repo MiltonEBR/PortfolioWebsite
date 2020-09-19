@@ -96,7 +96,6 @@ header > h1 {
 
 .icon-btn {
 	margin: 0 2%;
-	display: inline-block;
 	position: relative;
 	border: 0;
 	border-radius: 100%;
@@ -105,7 +104,7 @@ header > h1 {
 	height: auto;
 	width: 100%;
 
-	transition: background-color 200ms, width 200ms, padding 250ms;
+	transition: background-color 200ms, width 200ms, padding 250ms, border-radius 250ms;
 }
 
 .icon-btn > img {
@@ -133,6 +132,21 @@ header > h1 {
 	transition: opacity 200ms, top 200ms;
 }
 
+.icon-btn > p {
+	display: none;
+	text-align: left;
+	font-family: var(--fnt-txt);
+	font-weight: var(--txt-wgt);
+	color: var(--clr-txt);
+	font-size: 1.5em;
+}
+
+.icon-btn > i {
+	display: none;
+	color: var(--clr-txt);
+	font-size: 1.5em;
+}
+
 .icon-btn:hover {
 	background-color: var(--bg-clr);
 	width: 150%;
@@ -142,8 +156,38 @@ header > h1 {
 	width: 150%;
 	background-color: black;
 	padding-right: 25vw;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	padding-left: 2vh;
 	z-index: 0;
 	border-radius: 0%;
+}
+
+.clicked > p {
+	display: block;
+	position: absolute;
+	width: 50%;
+	top: 20%;
+	height: 60%;
+
+	left: 40%;
+	float: right;
+}
+
+.clicked > i {
+	display: block;
+	position: absolute;
+	left: 95%;
+	top: 5%;
+	font-size: 1.5em;
+}
+
+.clicked:hover {
+	background-color: black;
+}
+
+.clicked:hover .icon-txt {
+	display: none;
 }
 
 .icon-btn:hover .icon-txt {
