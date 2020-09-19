@@ -33,26 +33,14 @@ barba.init({
 	]
 });
 
-const div = document.querySelector('.trans');
+//Skills
+const buttons = document.querySelectorAll('.icon-btn');
 
-// const links = document.querySelectorAll('.panel-item');
-
-// const transitionDIV = addTransDiv();
-// var func;
-// transitionDIV.addEventListener('transitionend', () => {
-// 	if (func) {
-// 		func();
-// 	}
-// });
-
-// for (link of links) {
-// 	const href = link.href;
-// 	link.onclick = (event) => {
-// 		event.preventDefault();
-// 		console.log(href);
-// 		func = () => {
-// 			window.location.href = href;
-// 		};
-// 		transitionDIV.classList.add('trans-on');
-// 	};
-// }
+if (buttons.length > 0) {
+	for (button of buttons) {
+		button.onclick = function() {
+			console.log('hello');
+			this.classList.add('clicked');
+		};
+	}
+}
