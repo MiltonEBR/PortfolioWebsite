@@ -23,11 +23,8 @@ barba.init({
 		{
 			name: 'default-transition',
 			async leave(data) {
-				const done = this.async();
-
 				transition();
 				await delay(600);
-				done();
 			},
 			async enter(data) {
 				transition();
