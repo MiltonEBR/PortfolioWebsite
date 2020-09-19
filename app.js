@@ -23,6 +23,7 @@ barba.init({
 		{
 			name: 'default-transition',
 			async leave(data) {
+				console.log('hello');
 				transition();
 				await delay(600);
 			},
@@ -34,6 +35,7 @@ barba.init({
 });
 
 //Skills
+
 const buttons = document.querySelectorAll('.icon-btn');
 const icons = document.querySelectorAll('i');
 
