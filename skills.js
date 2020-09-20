@@ -31,7 +31,6 @@ class Skills {
 	}
 
 	run() {
-		console.log('new');
 		this.buttons = document.querySelectorAll('.icon-btn');
 		this.icons = document.querySelectorAll('i');
 
