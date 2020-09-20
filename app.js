@@ -18,7 +18,7 @@ const transition = () => {
 	}
 };
 
-const skills = new Skills();
+let skills;
 
 barba.init({
 	transitions: [
@@ -28,16 +28,20 @@ barba.init({
 				transition();
 				await delay(600);
 			},
-			async enter(data) {
-				if (data.next.namespace === 'skills') {
-					skills.run();
-				}
+			enter(data) {
 				transition();
-			},
-			once(data) {
-				if (data.next.namespace === 'skills') {
-					skills.run();
+			}
+		}
+	],
+	views: [
+		{
+			namespace: 'skills',
+			beforeEnter(data) {
+				if (!skills) {
+					skills = new Skills();
 				}
+
+				skills.run();
 			}
 		}
 	]
