@@ -1,7 +1,7 @@
 class Skills {
 	constructor() {
-		this.buttons = document.querySelectorAll('.icon-btn');
-		this.icons = document.querySelectorAll('i');
+		this.buttons = null;
+		this.icons = null;
 	}
 
 	closeCards() {
@@ -31,6 +31,10 @@ class Skills {
 	}
 
 	run() {
+		console.log('new');
+		this.buttons = document.querySelectorAll('.icon-btn');
+		this.icons = document.querySelectorAll('i');
+
 		const closeCards = this.closeCards;
 		document.addEventListener('click', (evt) => {
 			var clickInside = false;

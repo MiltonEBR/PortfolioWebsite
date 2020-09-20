@@ -18,21 +18,27 @@ const transition = () => {
 	}
 };
 
+const skills = new Skills();
+
 barba.init({
 	transitions: [
 		{
 			name: 'default',
 			async leave(data) {
-				console.log('hello');
 				transition();
 				await delay(600);
 			},
 			async enter(data) {
+				if (data.next.namespace === 'skills') {
+					skills.run();
+				}
 				transition();
+			},
+			once(data) {
+				if (data.next.namespace === 'skills') {
+					skills.run();
+				}
 			}
 		}
 	]
 });
-
-const s = new Skills();
-s.run();
