@@ -96,6 +96,8 @@ header > h1 {
 }
 
 .icon-btn {
+	flex-basis: 0;
+	flex-grow: 1;
 	outline: none;
 	margin: 2% 2%;
 	position: relative;
@@ -106,7 +108,11 @@ header > h1 {
 	height: auto;
 	width: 100%;
 
-	transition: background-color 200ms, width 200ms, padding 250ms, border-radius 250ms;
+	display: grid;
+	grid-template-columns: 100% 0% 0%;
+	grid-template-areas: "img des ic";
+	grid-template-rows: 100%;
+	transition: background-color 200ms, flex 200ms, padding 250ms, border-radius 250ms, grid 200ms;
 }
 
 .icon-btn:focus {
@@ -114,31 +120,34 @@ header > h1 {
 }
 
 .icon-btn > img {
+	grid-area: img;
+	display: block;
 	width: 100%;
-	height: 100%;
+	height: auto;
 	position: relative;
 	z-index: -1;
 	border-radius: 100%;
-	display: block;
 }
 
-.icon-btn > h2 {
+.icon-txt {
+	grid-column: 1/2;
+	grid-row: 1/2;
 	opacity: 0;
 	font-family: var(--fnt-txt);
 	font-weight: var(--ttl-wgt);
 	color: var(--clr-txt);
 	font-size: 3em;
 
-	position: absolute;
+	padding-top: 40%;
 	text-align: center;
-	top: 60%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	align-self: center;
+	justify-self: center;
 
-	transition: opacity 200ms, top 200ms;
+	transition: opacity 200ms, padding 200ms;
 }
 
 .icon-btn > p {
+	grid-area: des;
 	opacity: 0;
 	display: none;
 	text-align: left;
@@ -149,6 +158,7 @@ header > h1 {
 }
 
 .icon-btn > i {
+	grid-area: ic;
 	display: none;
 	color: var(--clr-txt);
 	font-size: 1.5em;
@@ -156,41 +166,37 @@ header > h1 {
 
 .icon-btn:hover {
 	background-color: var(--bg-clr);
-	width: 150%;
+	flex-grow: 1.5;
 }
 
 .clicked {
-	width: 150%;
+	flex-grow: 6;
+	grid-template-columns: 40% 50% 10%;
 	background-color: black;
-	padding-right: 30vw;
-	padding-top: 5vh;
-	padding-bottom: 5vh;
-	padding-left: 2vh;
 	z-index: 0;
 	border-radius: 20px;
+	align-items: center;
+	justify-items: center;
+	padding: 2vh 1vw;
 }
 
 .clicked > p {
+	justify-self: end;
+	width: 20vw;
 	opacity: 1;
 	display: block;
-	position: absolute;
-	width: 50%;
-	top: 20%;
-	height: 60%;
-	left: 40%;
-	float: right;
 }
 
 .clicked > i {
+	align-self: start;
+	justify-self: end;
 	display: block;
-	position: absolute;
-	left: 91%;
-	top: 7%;
 	font-size: 2em;
 }
 
 .clicked:hover {
 	background-color: black;
+	flex-grow: 6;
 }
 
 .clicked:hover .icon-txt {
@@ -199,7 +205,7 @@ header > h1 {
 
 .icon-btn:hover .icon-txt {
 	opacity: 1;
-	top: 50%;
+	padding-top: 0%;
 }
 
 @media (max-width: 1200px) {
