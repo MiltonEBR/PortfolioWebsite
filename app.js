@@ -40,7 +40,7 @@ barba.init({
 				if (!skills) {
 					skills = new Skills();
 				}
-
+				console.log('ello');
 				skills.run();
 			}
 		}

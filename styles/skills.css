@@ -98,6 +98,7 @@ header > h1 {
 .icon-btn {
 	flex-basis: 0;
 	flex-grow: 1;
+	flex-shrink: 1;
 	outline: none;
 	margin: 2% 2%;
 	position: relative;
@@ -114,7 +115,6 @@ header > h1 {
 	grid-template-rows: 100%;
 	transition: background-color 200ms, flex 200ms, padding 250ms, border-radius 250ms, grid 200ms;
 }
-
 .icon-btn:focus {
 	outline: none;
 }
@@ -148,13 +148,14 @@ header > h1 {
 
 .icon-btn > p {
 	grid-area: des;
-	opacity: 0;
 	display: none;
 	text-align: left;
 	font-family: var(--fnt-txt);
 	font-weight: var(--txt-wgt);
 	color: var(--clr-txt);
 	font-size: 1.5em;
+
+	transition: opacity 250ms;
 }
 
 .icon-btn > i {
@@ -165,12 +166,17 @@ header > h1 {
 }
 
 .icon-btn:hover {
+	flex-basis: 20%;
+	flex-grow: 0;
+	flex-shrink: 0;
 	background-color: var(--bg-clr);
-	flex-grow: 1.5;
 }
 
 .clicked {
-	flex-grow: 6;
+	flex-basis: 40vw;
+	height: 20vw;
+	flex-grow: 0;
+	flex-shrink: 0;
 	grid-template-columns: 40% 50% 10%;
 	background-color: black;
 	z-index: 0;
@@ -182,7 +188,7 @@ header > h1 {
 
 .clicked > p {
 	justify-self: end;
-	width: 20vw;
+	width: 15vw;
 	opacity: 1;
 	display: block;
 }
@@ -196,13 +202,12 @@ header > h1 {
 
 .clicked:hover {
 	background-color: black;
-	flex-grow: 6;
+	flex-basis: 40vw;
 }
-
 .clicked:hover .icon-txt {
+	opacity: 0;
 	display: none;
 }
-
 .icon-btn:hover .icon-txt {
 	opacity: 1;
 	padding-top: 0%;
