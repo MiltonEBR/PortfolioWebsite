@@ -1,5 +1,8 @@
-body {
-	background-color: var(--bg-drk);
+.skills-body {
+	background: url('../images/Liquid-Cheese.svg');
+	background-size: cover;
+	position: relative;
+	z-index: -10;
 }
 
 #home-btn {
@@ -14,6 +17,10 @@ body {
 	display: grid;
 	grid-template-columns: 25% auto;
 	align-items: center;
+}
+
+#home-btn:focus {
+	outline: none;
 }
 
 #home-btn > i {
