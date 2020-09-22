@@ -21,6 +21,10 @@
 	--ttl-wgt: 900;
 }
 
+body {
+	width: 100%;
+}
+
 .trans {
 	position: fixed;
 	background-color: black;
