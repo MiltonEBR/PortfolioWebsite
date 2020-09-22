@@ -87,34 +87,28 @@ header > h1 {
 }
 
 #icons {
-	margin-top: 12.5vh;
-	height: 25vh;
-	margin-bottom: 12.5vh;
+	margin: 0% 5%;
+	height: 50vh;
 }
 
 #icon-holder {
-	position: relative;
 	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	max-width: 100%;
 }
 
 .icon-btn {
-	flex-basis: 0;
+	margin: 10px;
+	flex-basis: 200px;
 	flex-grow: 1;
 	flex-shrink: 1;
+
 	outline: none;
-	margin: 2% 2%;
-	position: relative;
 	border: 0;
 	border-radius: 100%;
 	background: none;
-
-	height: auto;
-	width: 100%;
 
 	display: grid;
 	grid-template-columns: 100% 0% 0%;
@@ -173,29 +167,32 @@ header > h1 {
 }
 
 .icon-btn:hover {
-	flex-basis: 20%;
-	flex-grow: 0;
-	flex-shrink: 0;
 	background-color: var(--bg-clr);
+
+	flex-basis: 300px;
 }
 
 .clicked {
-	flex-basis: 40vw;
-	height: 20vw;
-	flex-grow: 0;
-	flex-shrink: 0;
-	grid-template-columns: 40% 50% 10%;
 	background-color: black;
 	z-index: 0;
+	flex-basis: 300px;
+	grid-template-columns: 100% 100px 100px;
+	background-color: black;
+
 	border-radius: 20px;
 	align-items: center;
 	justify-items: center;
-	padding: 2vh 1vw;
+	/* position: absolute;
+	width: 40vw;
+	flex-grow: 0;
+	flex-shrink: 0;
+	align-items: center;
+	justify-items: center;
+	padding: 2vh 1vw; */
 }
 
 .clicked > p {
 	justify-self: end;
-	width: 15vw;
 	height: 100%;
 	opacity: 1;
 	display: block;
@@ -210,7 +207,6 @@ header > h1 {
 
 .clicked:hover {
 	background-color: black;
-	flex-basis: 40vw;
 }
 .clicked:hover .icon-txt {
 	opacity: 0;
@@ -222,72 +218,6 @@ header > h1 {
 }
 
 @media (max-width: 1200px) {
-	.icon-btn > p {
-		font-size: 1em;
-	}
-
-	.icon-btn > i {
-		font-size: 1.5em;
-	}
-
-	.icon-btn > h2 {
-		font-size: 2em;
-	}
-
-	.icon-btn {
-		width: 20%;
-		flex-basis: 1;
-		flex-grow: 0;
-		flex-shrink: 0;
-
-		transition: width 200ms;
-	}
-
-	.icon-btn:hover {
-		width: 25%;
-	}
-
-	.clicked {
-		width: 30%;
-
-		grid-template-areas: "img ic" "des des";
-		grid-template-columns: 90% 10%;
-		grid-template-rows: auto auto;
-	}
-
-	.clicked:hover {
-		width: 30%;
-	}
-
-	.clicked > p {
-		margin-top: 2vh;
-		justify-self: center;
-		width: 90%;
-		opacity: 1;
-		display: block;
-	}
-
-	.clicked > img {
-		height: auto;
-		width: 100%;
-	}
-
-	#icon-holder {
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	#icons {
-		padding-right: 10%;
-		padding-left: 10%;
-		margin-top: 0vh;
-		height: 50vh;
-		margin-bottom: 0vh;
-	}
 }
 
 footer {
