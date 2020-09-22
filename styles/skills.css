@@ -108,7 +108,7 @@ header > h1 {
 	outline: none;
 	border: 0;
 	border-radius: 100%;
-	background: none;
+	background: rgba(0, 0, 0, 0);
 
 	display: grid;
 	grid-template-columns: 100% 0% 0%;
@@ -175,10 +175,11 @@ header > h1 {
 .clicked {
 	background-color: black;
 	z-index: 0;
-	flex-basis: 300px;
-	grid-template-columns: 100% 100px 100px;
+	flex-basis: 1200px;
+	grid-template-columns: 40% 50% 10%;
 	background-color: black;
 
+	padding: 15px;
 	border-radius: 20px;
 	align-items: center;
 	justify-items: center;
@@ -193,9 +194,10 @@ header > h1 {
 
 .clicked > p {
 	justify-self: end;
-	height: 100%;
+	align-self: center;
 	opacity: 1;
 	display: block;
+	margin-left: 15px;
 }
 
 .clicked > i {
@@ -207,17 +209,31 @@ header > h1 {
 
 .clicked:hover {
 	background-color: black;
+
+	flex-basis: 1200px;
 }
-.clicked:hover .icon-txt {
-	opacity: 0;
-	display: none;
-}
+
 .icon-btn:hover .icon-txt {
 	opacity: 1;
 	padding-top: 0%;
 }
 
+.clicked:hover .icon-txt {
+	opacity: 0;
+}
+
 @media (max-width: 1200px) {
+	.clicked > i {
+		font-size: 1.5em;
+	}
+
+	.clicked > p {
+		font-size: 1em;
+	}
+
+	.icon-txt {
+		font-size: 1.5em;
+	}
 }
 
 footer {
