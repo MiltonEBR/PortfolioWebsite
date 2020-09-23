@@ -2,11 +2,14 @@
 	height: 50vh;
 }
 
-.proj-list {
-	height: 50vh;
+.proj-header {
 	font-family: var(--fnt-txt);
 	font-weight: var(--txt-wgt);
 	color: var(--clr-txt);
+}
+
+.proj-list {
+	height: 50vh;
 
 	justify-content: center;
 	align-items: center;
@@ -43,4 +46,40 @@
 
 .proj:not(:first-child) {
 	margin-left: -130px;
+}
+
+.thumb-container {
+	align-self: center;
+	position: relative;
+	display: grid;
+
+	margin-top: 2rem;
+
+	grid-template-columns: 70px 70px 70px;
+	grid-template-rows: 80px 80px;
+	align-items: center;
+	justify-items: center;
+}
+
+.big-thumb {
+	grid-column: 1/-1;
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+}
+
+.small-thumb {
+	width: 40px;
+	margin: 0 1rem;
+	height: 40px;
+	align-self: center;
+	border-radius: 100%;
+}
+
+.proj > p {
+	margin-top: 1em;
+	font-family: var(--fnt-txt);
+	font-weight: var(--txt-wgt);
+	color: var(--clr-txt);
 }
