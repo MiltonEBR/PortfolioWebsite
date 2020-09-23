@@ -1,3 +1,4 @@
+//Simple delay function
 const delay = (n) => {
 	n = n || 2000;
 	return new Promise((acc) => {
@@ -7,6 +8,7 @@ const delay = (n) => {
 	});
 };
 
+//Animation of the transition
 const transition = () => {
 	const div = document.querySelector('.trans');
 	if (div.classList.contains('trans-off')) {
@@ -15,6 +17,20 @@ const transition = () => {
 	} else {
 		div.classList.remove('trans-on');
 		div.classList.add('trans-off');
+	}
+};
+
+//Applies background to the body if it's not the index page
+const applyBackground = ({ next }) => {
+	const body = document.querySelector('body');
+	if (next.namespace !== 'home') {
+		if (!body.classList.contains('info-body')) {
+			body.classList.add('info-body');
+		}
+	} else {
+		if (body.classList.contains('info-body')) {
+			body.classList.remove('info-body');
+		}
 	}
 };
 
@@ -28,17 +44,11 @@ barba.init({
 				transition();
 				await delay(600);
 			},
+			once(data) {
+				applyBackground(data);
+			},
 			beforeEnter(data) {
-				const body = document.querySelector('body');
-				if (data.next.namespace !== 'home') {
-					if (!body.classList.contains('info-body')) {
-						body.classList.add('info-body');
-					}
-				} else {
-					if (body.classList.contains('info-body')) {
-						body.classList.remove('info-body');
-					}
-				}
+				applyBackground(data);
 			},
 			enter(data) {
 				transition();
