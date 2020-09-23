@@ -1,5 +1,5 @@
 #proj-header {
-	height: 50vh;
+	height: 40vh;
 }
 
 .proj-header {
@@ -17,14 +17,14 @@
 }
 
 .proj-list {
-	height: 50vh;
+	height: 60vh;
 
 	justify-content: center;
 	align-items: center;
 	display: flex;
 	padding: 3rem;
 
-	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 .proj {
@@ -32,7 +32,7 @@
 	position: relative;
 	flex-direction: column;
 
-	height: 350px;
+	height: 400px;
 	width: 400px;
 	min-width: 250px;
 	padding: 1.5rem;
@@ -40,7 +40,6 @@
 	border-radius: 16px;
 	background-color: rgb(37, 37, 37);
 	box-shadow: -1rem 0.5rem 3rem #000;
-
 	transition: .2s;
 }
 
@@ -91,7 +90,7 @@
 }
 
 .proj > p {
-	margin-top: 1em;
+	margin-top: 1.5em;
 	font-family: var(--fnt-txt);
 	font-weight: var(--txt-wgt);
 	color: var(--clr-txt);
