@@ -57,6 +57,7 @@
 
 a {
 	text-decoration: none;
+	outline: none;
 }
 
 .panel-item {
