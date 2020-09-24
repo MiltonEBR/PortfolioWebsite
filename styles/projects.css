@@ -109,6 +109,7 @@
 }
 
 #full-proj {
+	position: relative;
 	background-color: rgb(37, 37, 37);
 	border-radius: 17px;
 	height: 90vh;
@@ -168,6 +169,6 @@
 	color: var(--clr-txt);
 	font-size: 2em;
 	position: absolute;
-	right: 8.5em;
-	top: 2em;
+	top: 1em;
+	right: 1em;
 }
