@@ -34,9 +34,8 @@ const applyBackground = ({ next }) => {
 	}
 };
 
-let skills;
-
 barba.init({
+	cacheIgnore: [ '/skills/' ],
 	transitions: [
 		{
 			name: 'default',
@@ -58,12 +57,11 @@ barba.init({
 	views: [
 		{
 			namespace: 'skills',
-			beforeEnter(data) {
-				if (!skills) {
-					skills = new Skills();
-				}
+			beforeEnter({ next }) {
+				let script = document.createElement('script');
+				script.src = '/skills.js';
+				next.container.appendChild(script);
 				console.log('ello');
-				skills.run();
 			}
 		}
 	]
