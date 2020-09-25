@@ -34,6 +34,12 @@ const applyBackground = ({ next }) => {
 	}
 };
 
+const loadScript = (route, next) => {
+	let script = document.createElement('script');
+	script.src = `/${route}`;
+	next.container.appendChild(script);
+};
+
 barba.init({
 	cacheIgnore: [ '/skills/' ],
 	transitions: [
@@ -58,10 +64,13 @@ barba.init({
 		{
 			namespace: 'skills',
 			beforeEnter({ next }) {
-				let script = document.createElement('script');
-				script.src = '/skills.js';
-				next.container.appendChild(script);
-				console.log('ello');
+				loadScript('skills.js', next);
+			}
+		},
+		{
+			namespace: 'projects',
+			beforeEnter({ next }) {
+				loadScript('projects.js', next);
 			}
 		}
 	]
