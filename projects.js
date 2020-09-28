@@ -20,13 +20,12 @@ function setVisible(panel) {
 
 function run() {
 	const panel = document.querySelector('#proj-panel');
-	// const card = document.querySelector('#full-proj');
-	// panel.addEventListener('click', (evt) => {
-	// 	if (evt.target.contains(card)) {
-	// 		this.setHidden(panel);
-	// 	}
-	// });
-	const closeBtn = panel.querySelector('i');
+	panel.addEventListener('click', (evt) => {
+		if (panel === evt.target) {
+			setHidden(panel);
+		}
+	});
+	panel.querySelector('i');
 	closeBtn.onclick = () => {
 		this.setHidden(panel);
 	};
