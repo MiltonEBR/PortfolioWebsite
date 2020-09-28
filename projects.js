@@ -25,7 +25,7 @@ function run() {
 			setHidden(panel);
 		}
 	});
-	panel.querySelector('i');
+	const closeBtn = panel.querySelector('i');
 	closeBtn.onclick = () => {
 		this.setHidden(panel);
 	};
