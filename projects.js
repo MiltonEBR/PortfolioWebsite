@@ -74,9 +74,9 @@ function addOnClick(cardList, callback) {
 	}
 }
 
-function setPanel(card, bigPanel) {
+function setPanel(data, bigPanel) {
 	const panel = document.querySelector('#full-proj');
-	panel.innerHTML = `<i class="far fa-times-circle close-btn"></i>${card.data.full}`;
+	panel.innerHTML = `<i class="far fa-times-circle close-btn"></i>${data}`;
 
 	const closeBtn = panel.querySelector('i');
 	closeBtn.onclick = () => {
@@ -97,7 +97,7 @@ async function run() {
 
 	const cardList = createCards(jsonData);
 	addOnClick(cardList, (card) => {
-		setPanel(card, panel);
+		setPanel(card.data.full, panel);
 		setVisible(panel);
 	});
 }
