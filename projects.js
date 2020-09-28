@@ -29,6 +29,8 @@ async function createCards() {
 
 	const list = document.querySelector('.proj-list');
 
+	const createdCards = [];
+
 	for (i = 0; i < cards.length; i++) {
 		const article = document.createElement('article');
 		article.classList.add('proj');
@@ -60,7 +62,17 @@ async function createCards() {
 		desc.innerHTML = cards[i].short;
 		article.append(desc);
 
+		createdCards.push(article);
 		list.append(article);
+	}
+	return createdCards;
+}
+
+function addOnClick(cardList, callback) {
+	for (let card of cardList) {
+		card.onclick = () => {
+			callback();
+		};
 	}
 }
 
@@ -78,14 +90,11 @@ async function run() {
 		this.setHidden(panel);
 	};
 
-	const cards = document.querySelectorAll('.proj');
-	for (let card of cards) {
-		card.onclick = () => {
-			this.setVisible(panel);
-		};
-	}
-
-	createCards();
+	const cardList = await createCards();
+	console.log(cardList);
+	addOnClick(cardList, () => {
+		this.setVisible(panel);
+	});
 }
 
 run();
