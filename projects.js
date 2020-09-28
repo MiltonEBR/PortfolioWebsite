@@ -96,7 +96,6 @@ async function run() {
 	const jsonData = await readJSONFile('./projects.json');
 
 	const cardList = createCards(jsonData);
-	console.log(cardList);
 	addOnClick(cardList, (card) => {
 		setPanel(card, panel);
 		setVisible(panel);
