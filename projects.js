@@ -24,9 +24,7 @@ async function readJSONFile(file) {
 	return jsonData;
 }
 
-async function createCards() {
-	const cards = await readJSONFile('./projects.json');
-
+function createCards(cards) {
 	const list = document.querySelector('.proj-list');
 
 	const createdCards = [];
@@ -62,7 +60,7 @@ async function createCards() {
 		desc.innerHTML = cards[i].short;
 		article.append(desc);
 
-		createdCards.push(article);
+		createdCards.push({ article, data: cards[i] });
 		list.append(article);
 	}
 	return createdCards;
@@ -70,30 +68,38 @@ async function createCards() {
 
 function addOnClick(cardList, callback) {
 	for (let card of cardList) {
-		card.onclick = () => {
-			callback();
+		card.article.onclick = () => {
+			callback(card);
 		};
 	}
 }
 
+function setPanel(card, bigPanel) {
+	const panel = document.querySelector('#full-proj');
+	panel.innerHTML = `<i class="far fa-times-circle close-btn"></i>${card.data.full}`;
+
+	const closeBtn = panel.querySelector('i');
+	closeBtn.onclick = () => {
+		setHidden(bigPanel);
+	};
+}
+
 async function run() {
 	const panel = document.querySelector('#proj-panel');
-	this.setHidden(panel);
+	setHidden(panel);
 	panel.addEventListener('click', (evt) => {
 		if (panel === evt.target) {
 			setHidden(panel);
 		}
 	});
 
-	const closeBtn = panel.querySelector('i');
-	closeBtn.onclick = () => {
-		this.setHidden(panel);
-	};
+	const jsonData = await readJSONFile('./projects.json');
 
-	const cardList = await createCards();
+	const cardList = createCards(jsonData);
 	console.log(cardList);
-	addOnClick(cardList, () => {
-		this.setVisible(panel);
+	addOnClick(cardList, (card) => {
+		setPanel(card, panel);
+		setVisible(panel);
 	});
 }
 
