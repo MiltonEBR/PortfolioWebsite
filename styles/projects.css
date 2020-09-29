@@ -17,12 +17,13 @@
 }
 
 .proj-list {
-	height: 60vh;
+	height: 100vh;
 
 	justify-content: center;
-	align-items: center;
+	align-items: end;
 	display: flex;
 	padding: 3rem;
+	padding-bottom: 6rem;
 
 	overflow-x: hidden;
 }

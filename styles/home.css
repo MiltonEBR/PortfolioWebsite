@@ -24,6 +24,9 @@
 }
 
 /*Design*/
+header {
+	z-index: 0;
+}
 
 .panel-item {
 	background: linear-gradient(90deg, rgba(20, 20, 20, 1) 20%, var(--bg-clr) 100%);
