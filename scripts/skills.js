@@ -24,7 +24,7 @@ function openCard(icons) {
 }
 
 function run() {
-	buttons = document.querySelectorAll('.icon-btn');
+	buttons = document.querySelectorAll('.skill-container');
 	icons = document.querySelectorAll('i');
 
 	document.addEventListener('click', (evt) => {
