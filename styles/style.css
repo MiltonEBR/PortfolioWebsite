@@ -151,4 +151,12 @@ footer > img {
 	header > h1 {
 		font-size: 12em;
 	}
+
+	.social-link {
+		font-size: 1.7em;
+	}
+
+	#social-list > li {
+		margin: 0 .2em;
+	}
 }
