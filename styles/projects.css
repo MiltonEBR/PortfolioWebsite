@@ -148,7 +148,7 @@
 	font-weight: var(--txt-wgt);
 	color: var(--clr-txt);
 	font-size: 1.5em;
-	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
 }
 
 .img-holder {
@@ -157,7 +157,7 @@
 	width: 100%;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
 }
 
 .img-holder > img {
@@ -210,5 +210,18 @@
 	.proj-list::-webkit-scrollbar-thumb {
 		background-color: white;
 		border-radius: 20px;
+	}
+
+	#full-proj {
+		min-width: 400px;
+		padding: 1.5em;
+	}
+
+	#full-proj > h1 {
+		font-size: 3em;
+	}
+
+	#full-proj > p {
+		font-size: 1.25em;
 	}
 }
