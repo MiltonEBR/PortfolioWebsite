@@ -18,13 +18,12 @@
 }
 
 .proj-list {
-	height: 100vh;
-
+	height: 90vh;
 	justify-content: center;
 	align-items: end;
 	display: flex;
 	padding: 3rem;
-	padding-bottom: 6rem;
+	margin-bottom: 10vh;
 
 	overflow-x: hidden;
 }
@@ -190,4 +189,11 @@
 	position: absolute;
 	top: 1em;
 	right: 1em;
+}
+
+@media (max-width: 800px) {
+	.proj-list {
+		justify-content: start;
+		overflow-x: scroll;
+	}
 }
