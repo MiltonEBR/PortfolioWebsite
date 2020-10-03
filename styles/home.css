@@ -47,6 +47,7 @@ header {
 	margin-left: 2.5vh;
 	width: 15%;
 	max-width: 150px;
+	min-width: 100px;
 }
 
 .panel-container {
@@ -200,6 +201,7 @@ a {
 		margin-top: 0;
 		width: 110vw;
 		height: auto;
+		min-height: 110%;
 	}
 
 	.panel-desc {
