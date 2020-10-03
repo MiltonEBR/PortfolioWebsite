@@ -3,6 +3,7 @@
 }
 
 .proj-header {
+	position: relative;
 	font-family: var(--fnt-txt);
 	font-weight: var(--txt-wgt);
 	color: var(--clr-txt);
