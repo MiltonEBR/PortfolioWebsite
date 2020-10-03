@@ -195,5 +195,20 @@
 	.proj-list {
 		justify-content: start;
 		overflow-x: scroll;
+		scrollbar-width: thin;
+		scrollbar-color: white rgba(0, 0, 0, 0);
+	}
+
+	.proj-list::-webkit-scrollbar {
+		height: 5px;
+	}
+
+	.proj-list::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	.proj-list::-webkit-scrollbar-thumb {
+		background-color: white;
+		border-radius: 20px;
 	}
 }
