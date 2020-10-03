@@ -20,7 +20,7 @@
 .proj-list {
 	height: 90vh;
 	justify-content: center;
-	align-items: end;
+	align-items: flex-end;
 	display: flex;
 	padding: 3rem;
 	margin-bottom: 10vh;
