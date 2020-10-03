@@ -48,12 +48,17 @@ function createCards(cards) {
 		bigThumb.src = cards[i].thumb;
 		imgDiv.append(bigThumb);
 
+		const smallContainer = document.createElement('div');
+		smallContainer.classList.add('small-container');
+
 		for (j = 0; j < cards[i].smallThumbs.length; j++) {
 			const smallImg = document.createElement('img');
 			smallImg.classList.add('small-thumb');
 			smallImg.src = cards[i].smallThumbs[j];
-			imgDiv.append(smallImg);
+			smallContainer.append(smallImg);
 		}
+		imgDiv.append(smallContainer);
+
 		article.append(imgDiv);
 
 		const desc = document.createElement('p');
