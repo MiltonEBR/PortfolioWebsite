@@ -1,6 +1,7 @@
 * {
 	box-sizing: border-box;
 }
+
 /*Fonts*/
 .panel-title {
 	color: var(--clr-txt);
@@ -171,6 +172,7 @@ a {
 }
 
 .panel-item:hover .panel-img {
+	backface-visibility: hidden;
 	filter: blur(15px);
 }
 
