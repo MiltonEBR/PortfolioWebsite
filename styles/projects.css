@@ -191,6 +191,19 @@
 	right: 1em;
 }
 
+#full-proj::-webkit-scrollbar {
+	width: 15px;
+}
+
+#full-proj::-webkit-scrollbar-track {
+	background: rgb(30, 30, 30);
+}
+
+#full-proj::-webkit-scrollbar-thumb {
+	background-color: rgb(70, 70, 70);
+	border-radius: 20px;
+}
+
 @media (max-width: 800px) {
 	.proj-list {
 		justify-content: start;
